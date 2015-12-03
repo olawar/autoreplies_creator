@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Autoreplies generator</title>
+</head>
+<body>
+
+<h1>Welcome to Autoreplies Generator</h1>
+
+<p>It is intended to help you write a classy out-of-office message for your vacation or business trip.</p>
+<p>To adjust it to your needs just answer a few simple questions below. When your message is generated all you need to do is to copy and paste it to the automatic replies message field in your e-mail program.</p>
+<p>Enjoy!</p>
+
+<form id="message-generator">
+
+    <div class="message-style">
+        <h2>What is the reason of your absence?</h2>
+
+        <select class="message-style-options">
+            <option>Choose your reason</option>
+            <option value="business-trip">Business trip</option>
+            <option value="general-absence">Nothing specific</option>
+            <option value="vacation">Vacation</option>
+            <option value="sick-leave">Sick leave</option>
+            <option value="maternity-leave">Maternity leave</option>
+            <option value="christmas">Christmas break</option>
+            <option value="easter">Easter break</option>
+        </select>
+    </div>
+
+
+    <div class="return-date">
+        <h2>When do you plan your return to work?</h2>
+        <input type="date" name="return">
+    </div>
+
+
+    <div class="emergency-contact">
+        <h2>Will there be anyone to take care of your duties while you are absent?</h2>
+
+        <select class="emergency-contact-option">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+    </div>
+
+    <div class="emergency-contact-data">
+
+        <h2>Who will be your substitute?</h2>
+        <p>Please enter your substitute's name and surname</p>
+        <input type="text" name="name" placeholder="Your substitute's name">
+        <input type="text" name="surname" placeholder="Your substitute's surname">
+
+        <p>Please enter your substitute's e-mail address</p>
+        <input type="email" name="surname" placeholder="Your substitute's e-mail">
+    </div>
+
+
+    <p>Ready to see your message?</p>
+    <input type="submit" value="submit">
+
+</form>
+
+<footer>
+    <p>This site does not use cookies or gather submitted data in any way.</p>
+    <p>Copyright &copy; 2015 Aleksandra Warzecha Awar.</p>
+</footer>
+
+</body>
+</html>
