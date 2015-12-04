@@ -236,4 +236,7 @@ html {
     .footer-space a:visited {
       color: #947C44; }
 
+.no-display {
+  display: none; }
+
 /*# sourceMappingURL=style.css.map */
