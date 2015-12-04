@@ -10,12 +10,6 @@ body,
 html {
   font-size: 100%;
   font-family: 'Droid Sans', sans-serif;
-  @include smartphone {
-    font-size: 200%;
-  }
-  @include tablet {
-    font-size: 120%;
-  }
 }
 
 .section-container {
@@ -28,6 +22,11 @@ html {
   padding: 2rem 0;
 }
 
+.clearfix,
+.clearfix:before,
+.clearfix:after {
+  clear: both;
+}
 
 //title space styles
 
@@ -37,16 +36,29 @@ html {
   .content-container {
     h1 {
       font-family: 'Source Code Pro', sans-serif;
-      font-size: 2rem;
-      width: 18rem;
-      height: 18rem;
-      border-radius: 9rem;
+      font-size: 2.5rem;
+      width: 20rem;
+      height: 20rem;
+      border-radius: 10rem;
       border: 4px dashed #ffffff;
       color: #ffffff;
       text-align: center;
-      padding: 6rem 0;
+      padding: 6.25rem 0;
       box-sizing: border-box;
       margin: 2.5rem auto;
+      @include smartphone {
+        font-family: 'Source Code Pro', sans-serif;
+        font-size: 2.15rem;
+        width: 18rem;
+        height: 18rem;
+        border-radius: 9rem;
+        border: 4px dashed #ffffff;
+        color: #ffffff;
+        text-align: center;
+        padding: 6rem 0;
+        box-sizing: border-box;
+        margin: 2.5rem auto;
+      }
     }
   }
   @include smartphone {
@@ -66,12 +78,13 @@ html {
     text-align: center;
     color: #446994;
     h2 {
-      font-size: 1.5rem;
+      font-size: 2rem;
       margin: 1.5rem 0;
     }
     p {
       width: 70%;
       margin: 0 auto;
+      font-size: 1.5rem;
       @include smartphone {
         width: 100%;
       }
@@ -99,5 +112,116 @@ html {
   &:hover,
   &:active {
     border-color: #E0D067 transparent transparent transparent;
+  }
+}
+
+//form styles
+
+#form-space {
+  background-color: #67A0E1;
+  color: #ffffff;
+  h2 {
+    font-size: 2rem;
+    margin: 1.5rem 0 3rem 0;
+    text-align: center;
+  }
+  p {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+  }
+  .summary {
+    margin-top: 2rem;
+  }
+}
+
+#message-generator {
+  float: left;
+  width: 50%;
+  margin: 0;
+  select,
+  input[type=email],
+  input[type=date] {
+    width: 100%;
+    height: 3rem;
+    border: 1px solid #446994;
+    margin: 0.5rem 0;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    font-family: 'Source Code Pro', sans-serif;
+    color: gray;
+    @include smartphone {
+      width: 100%;
+    }
+    @include tablet {
+      width: 100%;
+    }
+  }
+  input[type=text] {
+    width: 49.67%;
+    height: 3rem;
+    border: 1px solid #446994;
+    margin: 0.5rem 0 0.5rem 0;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    font-family: 'Source Code Pro', sans-serif;
+    color: gray;
+    @include smartphone {
+      width: 100%;
+    }
+    @include tablet {
+      width: 100%;
+    }
+  }
+  input[type=submit] {
+    width: 10rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    box-shadow: none;
+    background-color: #E0D067;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin: 1rem 0 3rem 0;
+  }
+  @include smartphone {
+    float: none;
+    width: 100%;
+  }
+}
+
+.final-message {
+  float: right;
+  width: 40%;
+  @include smartphone {
+    float: none;
+    width: 100%;
+  }
+}
+
+#message-result {
+  width: 100%;
+  height: 22rem;
+  border: 2px dashed #ffffff;
+  margin: 2rem 0;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+//footer styles
+
+.footer-space {
+  background-color: #ffffff;
+  width: 100%;
+  color: #446994;
+  height: auto;
+  line-height: 1.3rem;
+  a {
+    color: #E0D067;
+    text-decoration: none;
+    &:visited {
+      color: #947C44;
+    }
   }
 }

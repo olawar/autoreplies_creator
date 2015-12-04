@@ -52,12 +52,6 @@ body,
 html {
   font-size: 100%;
   font-family: 'Droid Sans', sans-serif; }
-  @media screen and (max-width: 1024px) and (orientation: portrait) {
-    html {
-      font-size: 200%; } }
-  @media screen and (max-width: 1024px) and (orientation: landscape) {
-    html {
-      font-size: 120%; } }
 
 .section-container {
   width: 100%; }
@@ -67,21 +61,39 @@ html {
   margin: 0 auto;
   padding: 2rem 0; }
 
+.clearfix,
+.clearfix:before,
+.clearfix:after {
+  clear: both; }
+
 .title-space {
   background-color: #67a0e1;
   height: 55%; }
   .title-space .content-container h1 {
     font-family: 'Source Code Pro', sans-serif;
-    font-size: 2rem;
-    width: 18rem;
-    height: 18rem;
-    border-radius: 9rem;
+    font-size: 2.5rem;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 10rem;
     border: 4px dashed #ffffff;
     color: #ffffff;
     text-align: center;
-    padding: 6rem 0;
+    padding: 6.25rem 0;
     box-sizing: border-box;
     margin: 2.5rem auto; }
+    @media screen and (max-width: 1024px) and (orientation: portrait) {
+      .title-space .content-container h1 {
+        font-family: 'Source Code Pro', sans-serif;
+        font-size: 2.15rem;
+        width: 18rem;
+        height: 18rem;
+        border-radius: 9rem;
+        border: 4px dashed #ffffff;
+        color: #ffffff;
+        text-align: center;
+        padding: 6rem 0;
+        box-sizing: border-box;
+        margin: 2.5rem auto; } }
   @media screen and (max-width: 1024px) and (orientation: portrait) {
     .title-space {
       height: auto; } }
@@ -96,11 +108,12 @@ html {
     text-align: center;
     color: #446994; }
     .intro-space .content-container h2 {
-      font-size: 1.5rem;
+      font-size: 2rem;
       margin: 1.5rem 0; }
     .intro-space .content-container p {
       width: 70%;
-      margin: 0 auto; }
+      margin: 0 auto;
+      font-size: 1.5rem; }
       @media screen and (max-width: 1024px) and (orientation: portrait) {
         .intro-space .content-container p {
           width: 100%; } }
@@ -124,5 +137,103 @@ html {
   margin: 2rem auto; }
   #arrow-down:hover, #arrow-down:active {
     border-color: #E0D067 transparent transparent transparent; }
+
+#form-space {
+  background-color: #67A0E1;
+  color: #ffffff; }
+  #form-space h2 {
+    font-size: 2rem;
+    margin: 1.5rem 0 3rem 0;
+    text-align: center; }
+  #form-space p {
+    font-size: 1.5rem;
+    margin: 0.5rem 0; }
+  #form-space .summary {
+    margin-top: 2rem; }
+
+#message-generator {
+  float: left;
+  width: 50%;
+  margin: 0; }
+  #message-generator select,
+  #message-generator input[type=email],
+  #message-generator input[type=date] {
+    width: 100%;
+    height: 3rem;
+    border: 1px solid #446994;
+    margin: 0.5rem 0;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    font-family: 'Source Code Pro', sans-serif;
+    color: gray; }
+    @media screen and (max-width: 1024px) and (orientation: portrait) {
+      #message-generator select,
+      #message-generator input[type=email],
+      #message-generator input[type=date] {
+        width: 100%; } }
+    @media screen and (max-width: 1024px) and (orientation: landscape) {
+      #message-generator select,
+      #message-generator input[type=email],
+      #message-generator input[type=date] {
+        width: 100%; } }
+  #message-generator input[type=text] {
+    width: 49.67%;
+    height: 3rem;
+    border: 1px solid #446994;
+    margin: 0.5rem 0 0.5rem 0;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    font-family: 'Source Code Pro', sans-serif;
+    color: gray; }
+    @media screen and (max-width: 1024px) and (orientation: portrait) {
+      #message-generator input[type=text] {
+        width: 100%; } }
+    @media screen and (max-width: 1024px) and (orientation: landscape) {
+      #message-generator input[type=text] {
+        width: 100%; } }
+  #message-generator input[type=submit] {
+    width: 10rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    box-shadow: none;
+    background-color: #E0D067;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin: 1rem 0 3rem 0; }
+  @media screen and (max-width: 1024px) and (orientation: portrait) {
+    #message-generator {
+      float: none;
+      width: 100%; } }
+
+.final-message {
+  float: right;
+  width: 40%; }
+  @media screen and (max-width: 1024px) and (orientation: portrait) {
+    .final-message {
+      float: none;
+      width: 100%; } }
+
+#message-result {
+  width: 100%;
+  height: 22rem;
+  border: 2px dashed #ffffff;
+  margin: 2rem 0;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 1rem; }
+
+.footer-space {
+  background-color: #ffffff;
+  width: 100%;
+  color: #446994;
+  height: auto;
+  line-height: 1.3rem; }
+  .footer-space a {
+    color: #E0D067;
+    text-decoration: none; }
+    .footer-space a:visited {
+      color: #947C44; }
 
 /*# sourceMappingURL=style.css.map */
