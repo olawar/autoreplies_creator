@@ -3,69 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <title>Autoreplies generator</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<h1>Welcome to Autoreplies Generator</h1>
+<div class="content-space">
 
-<p>It is intended to help you write a classy out-of-office message for your vacation or business trip.</p>
-<p>To adjust it to your needs just answer a few simple questions below. When your message is generated all you need to do is to copy and paste it to the automatic replies message field in your e-mail program.</p>
-<p>Enjoy!</p>
-
-<form id="message-generator">
-
-    <div class="message-style">
-        <h2>What is the reason of your absence?</h2>
-
-        <select class="message-style-options">
-            <option>Choose your reason</option>
-            <option value="business-trip">Business trip</option>
-            <option value="general-absence">Nothing specific</option>
-            <option value="vacation">Vacation</option>
-            <option value="sick-leave">Sick leave</option>
-            <option value="maternity-leave">Maternity leave</option>
-            <option value="christmas">Christmas break</option>
-            <option value="easter">Easter break</option>
-        </select>
+    <div class="section-container title-space">
+        <div class="content-container">
+            <h1>Welcome to Autoreplies Generator</h1>
+        </div>
     </div>
 
+    <div class="section-container intro-space">
+        <div class="content-container">
+            <h2>Have you ever had a problem with composing your OOO?</h2>
+            <p>The Autoreplies Generator will put an end to this problem and will help you write a classy autoresponder for your vacation or business trip.</p>
+            <p>To adjust it to your needs just answer a few simple questions below. When your message is generated all you need to do is to copy and paste it to the automatic replies message field in your e-mail program.</p>
+        </div>
 
-    <div class="return-date">
-        <h2>When do you plan your return to work?</h2>
-        <input type="date" name="return">
+        <a id="arrow-down" href="#form-space"></a>
     </div>
 
+    <div id="form-space" class="section-container">
+        <div class="content-container">
 
-    <div class="emergency-contact">
-        <h2>Will there be anyone to take care of your duties while you are absent?</h2>
+            <form id="message-generator">
 
-        <select class="emergency-contact-option">
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-        </select>
+                <div class="message-style">
+                    <h2>What is the reason of your absence?</h2>
+
+                    <select class="message-style-options">
+                        <option>Choose your reason</option>
+                        <option value="business-trip">Business trip</option>
+                        <option value="general-absence">Nothing specific</option>
+                        <option value="vacation">Vacation</option>
+                        <option value="sick-leave">Sick leave</option>
+                        <option value="maternity-leave">Maternity leave</option>
+                        <option value="christmas">Christmas break</option>
+                        <option value="easter">Easter break</option>
+                    </select>
+                </div>
+
+
+                <div class="return-date">
+                    <h2>When do you plan your return to work?</h2>
+                    <input type="date" name="return">
+                </div>
+
+
+                <div class="emergency-contact">
+                    <h2>Will there be anyone to take care of your duties while you are absent?</h2>
+
+                    <select class="emergency-contact-option">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+
+                <div class="emergency-contact-data">
+                    <h2>Who will be your substitute?</h2>
+                    <p>Please enter your substitute's name and surname</p>
+                    <input type="text" name="name" placeholder="Your substitute's name">
+                    <input type="text" name="surname" placeholder="Your substitute's surname">
+
+                    <p>Please enter your substitute's e-mail address</p>
+                    <input type="email" name="surname" placeholder="Your substitute's e-mail">
+                </div>
+
+                <p>Ready to see your message?</p>
+                <input type="submit" value="submit">
+
+            </form>
+
+        </div>
+
     </div>
 
-    <div class="emergency-contact-data">
-
-        <h2>Who will be your substitute?</h2>
-        <p>Please enter your substitute's name and surname</p>
-        <input type="text" name="name" placeholder="Your substitute's name">
-        <input type="text" name="surname" placeholder="Your substitute's surname">
-
-        <p>Please enter your substitute's e-mail address</p>
-        <input type="email" name="surname" placeholder="Your substitute's e-mail">
+    <div class="section-container footer-space">
+        <footer class="content-container">
+            <p>This site does not use cookies or gather submitted data in any way.</p>
+            <p>Copyright &copy; 2015 Aleksandra Warzecha Awar.</p>
+        </footer>
     </div>
 
-
-    <p>Ready to see your message?</p>
-    <input type="submit" value="submit">
-
-</form>
-
-<footer>
-    <p>This site does not use cookies or gather submitted data in any way.</p>
-    <p>Copyright &copy; 2015 Aleksandra Warzecha Awar.</p>
-</footer>
+</div>
 
 </body>
 </html>
