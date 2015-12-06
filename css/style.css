@@ -157,7 +157,8 @@ html {
   margin: 0; }
   #message-generator select,
   #message-generator input[type=email],
-  #message-generator input[type=date] {
+  #message-generator input[type=date],
+  #message-generator #datepicker {
     width: 100%;
     height: 3rem;
     border: 1px solid #446994;
@@ -169,12 +170,14 @@ html {
     @media screen and (max-width: 1024px) and (orientation: portrait) {
       #message-generator select,
       #message-generator input[type=email],
-      #message-generator input[type=date] {
+      #message-generator input[type=date],
+      #message-generator #datepicker {
         width: 100%; } }
     @media screen and (max-width: 1024px) and (orientation: landscape) {
       #message-generator select,
       #message-generator input[type=email],
-      #message-generator input[type=date] {
+      #message-generator input[type=date],
+      #message-generator #datepicker {
         width: 100%; } }
   #message-generator input[type=text] {
     width: 49.67%;

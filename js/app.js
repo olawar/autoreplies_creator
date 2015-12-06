@@ -1,10 +1,14 @@
 var Application = function(){
 
     function testStart(){
-        console.log("dziala");
+        console.log("Hello! Enjoy my code and give me feedback at warzecha.ola@gmail.com");
     }
 
-    function getForm(){
+    function datepickerFeature(){
+        $( "#datepicker" ).datepicker();
+    }
+
+    function formInput(){
         $(".message-style-options").change(function(){
             var optionSelected = $( this ).val();
             console.log(optionSelected);
@@ -39,8 +43,8 @@ var Application = function(){
                     break;
                 }
             }
-
-            $(".final-message").removeClass("no-display");
+            //
+            //$(".final-message").removeClass("no-display");
 
         });
 
@@ -57,7 +61,8 @@ var Application = function(){
 
     return {
         testStart:testStart,
-        getForm:getForm,
+        datepickerFeature:datepickerFeature,
+        formInput:formInput,
         generateAutoreply:generateAutoreply
     }
 };
@@ -66,7 +71,8 @@ $(function(){
 
     var app = new Application();
     app.testStart();
-    app.getForm();
+    app.datepickerFeature();
+    app.formInput();
     app.generateAutoreply();
 
 });
