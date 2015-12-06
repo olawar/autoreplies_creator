@@ -8,9 +8,10 @@ var Application = function(){
         $( "#datepicker" ).datepicker();
     }
 
-    function formInput(){
+    function messageTemplate(){
+    //this function creates basic template of the message for adding further details
 
-        //choosing the reason
+        //choosing the reason - message template
         $("#message-style-options").change(function(){
             $("div.final-message").addClass("no-display");
             var optionSelected = $( this ).val();
@@ -41,71 +42,66 @@ var Application = function(){
                     break;
                 }
                 case "christmas": {
-                    $("#final-result").empty().append("<p>Season's greetings!<br>Thank you for your message. I am on Christmas break until <span></span>. <span>If your case is urgent please contact <span></span> <span></span> at <span></span>.</span></p>");
+                    $("#final-result").empty().append("<p>Season's greetings! Thank you for your message. I am on Christmas break until <span></span>. <span>If your case is urgent please contact <span></span> <span></span> at <span></span>.</span></p>");
                     break;
                 }
             }
+        });
+    }
 
-            //choosing return date
-            $("#datepicker").change(function(){
-                $("div.final-message").addClass("no-display");
-                var returnDate = $(this).val();
-                var spanTarget = $("div#final-result p > span:first-child");
-                spanTarget.empty().append(" " + returnDate);
+    function manageBehaviour(){
+    //this function manages behaviour on change and keypress events to prevent visible dynamic changes in the final output
+
+        //return date
+        $("#datepicker").change(function(){
+            $("div.final-message").addClass("no-display");
         });
 
-            //adding substitute
-            $("#emergency-contact-option").change(function(){
-                $("div.final-message").addClass("no-display");
-                if ($( this ).val() == "no") {
-                    $("#emergency-contact-data").hide();
-                    $("div#final-result p > span:nth-child(2)").addClass("no-display");
-                }
+        //substitute
+        $("#emergency-contact-option").change(function(){
+            $("div.final-message").addClass("no-display");
+            if ($( this ).val() == "no") {
+                $("#emergency-contact-data").hide();
+                $("div#final-result p > span:nth-child(2)").addClass("no-display");
+            }
 
-                else {
-                    $("#emergency-contact-data").show();
-                    $("div#final-result p > span:nth-child(2)").removeClass("no-display");
-                }
-            });
-
-            $("input[name=name]").change(function(){
-                $("div.final-message").addClass("no-display");
-                var subName = $(this).val();
-                var spanTargetName = $("div#final-result p > span > span:first-child");
-                spanTargetName.empty().append(" " + subName + " ");
-            });
-
-            $("input[name=surname]").change(function(){
-                $("div.final-message").addClass("no-display");
-                var subSurname = $(this).val();
-                var spanTargetSurname = $("div#final-result p > span > span:nth-child(2)");
-                spanTargetSurname.empty().append(" " + subSurname + " ");
-            });
-
-            $("input[name=email]").change(function(){
-                $("div.final-message").addClass("no-display");
-                var subEmail = $(this).val();
-                var spanTargetEmail = $("div#final-result p > span > span:last-child");
-                spanTargetEmail.empty().append(" " + subEmail);
-            });
-
+            else {
+                $("#emergency-contact-data").show();
+                $("div#final-result p > span:nth-child(2)").removeClass("no-display");
+            }
         });
 
-    //}
-    //
-    //function generateAutoreply(){
+        $("input[name=name]").keypress(function(){
+            $("div.final-message").addClass("no-display");
+        });
+
+        $("input[name=surname]").keypress(function(){
+            $("div.final-message").addClass("no-display");
+        });
+
+        $("input[name=email]").keypress(function(){
+            $("div.final-message").addClass("no-display");
+        });
+    }
+
+    function generateAutoreply(){
+    //this function activates on clicking the 'submit' button and adds all the details to the previously created message template
 
         $("#submit-button").on("click", function(){
+            $("div#final-result p > span:first-child").empty().append($("#datepicker").val());
+            $("div#final-result p > span > span:first-child").empty().append($("input[name=name]").val());
+            $("div#final-result p > span > span:nth-child(2)").empty().append( $("input[name=surname]").val());
+            $("div#final-result p > span > span:last-child").empty().append( $("input[name=email]").val());
             $("div.final-message").removeClass("no-display");
             return false;
         });
-
     }
 
     return {
         testStart:testStart,
         datepickerFeature:datepickerFeature,
-        formInput:formInput,
+        messageTemplate:messageTemplate,
+        manageBehaviour:manageBehaviour,
         generateAutoreply:generateAutoreply
     }
 };
@@ -115,7 +111,8 @@ $(function(){
     var app = new Application();
     app.testStart();
     app.datepickerFeature();
-    app.formInput();
+    app.messageTemplate();
+    app.manageBehaviour();
     app.generateAutoreply();
 
 });
