@@ -48,7 +48,7 @@ var Application = function(){
             //choosing return date
             $("#datepicker").change(function(){
                 var returnDate = $(this).val();
-                var spanTarget = $("div#final-result span:first-of-type");
+                var spanTarget = $("div#final-result p > span:first-child");
                 spanTarget.empty().append(" " + returnDate);
         });
 
@@ -56,12 +56,31 @@ var Application = function(){
             $("#emergency-contact-option").change(function(){
                 if ($( this ).val() == "no") {
                     $("#emergency-contact-data").hide();
-                    $("div#final-result span:nth-of-type(2)").remove();
+                    $("div#final-result p > span:nth-child(2)").addClass("no-display");
                 }
 
                 else {
                     $("#emergency-contact-data").show();
+                    $("div#final-result p > span:nth-child(2)").removeClass("no-display");
                 }
+            });
+
+            $("input[name=name]").change(function(){
+                var subName = $(this).val();
+                var spanTargetName = $("div#final-result p > span > span:first-child");
+                spanTargetName.empty().append(" " + subName + " ");
+            });
+
+            $("input[name=surname]").change(function(){
+                var subSurname = $(this).val();
+                var spanTargetSurname = $("div#final-result p > span > span:nth-child(2)");
+                spanTargetSurname.empty().append(" " + subSurname + " ");
+            });
+
+            $("input[name=email]").change(function(){
+                var subEmail = $(this).val();
+                var spanTargetEmail = $("div#final-result p > span > span:last-child");
+                spanTargetEmail.empty().append(" " + subEmail);
             });
 
 
