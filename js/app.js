@@ -11,37 +11,36 @@ var Application = function(){
     function formInput(){
 
         //choosing the reason
-        $(".message-style-options").change(function(){
+        $("#message-style-options").change(function(){
             var optionSelected = $( this ).val();
-            console.log(optionSelected);
 
             switch(optionSelected) {
                 case "business-trip": {
-                    $("#final-result").empty().append("<p>Thank you for your message. I am on a business trip until <span></span> with limited access to e-mail and phone. I will respond to your message upon my return. If you need immediate assistance please contact <span></span> <span></span> at <span></span>.</p>");
+                    $("#final-result").empty().append("<p>Thank you for your message. I am on a business trip until <span></span> with limited access to e-mail and phone. I will respond to your message upon my return. <span>If you need immediate assistance please contact <span></span> <span></span> at <span></span>.</span></p>");
                     break;
                 }
                 case "general-absence": {
-                    $("#final-result").empty().append("<p>Thank you for your message. I am out of the office until <span></span> with no access to e-mail. I will respond to your message upon my return. If you need immediate assistance please contact <span></span> <span></span> at <span></span>.</p>");
+                    $("#final-result").empty().append("<p>Thank you for your message. I am out of the office until <span></span> with no access to e-mail. I will respond to your message upon my return. <span>If you need immediate assistance please contact <span></span> <span></span> at <span></span>.</span></p>");
                     break;
                 }
                 case "closed-office": {
-                    $("#final-result").empty().append("<p>Thank you for your message. Our office will remain closed until <span></span>. I will respond to your message upon my return. If your case is urgent please contact <span></span> <span></span> at <span></span>.</p>");
+                    $("#final-result").empty().append("<p>Thank you for your message. Our office will remain closed until <span></span>. I will respond to your message upon my return. <span>If your case is urgent please contact <span></span> <span></span> at <span></span>.</span></p>");
                     break;
                 }
                 case "vacation": {
-                    $("#final-result").empty().append("<p>Thank you for your message. I am on vacation until <span></span>. I will respond to your message upon my return. If you need immediate assistance please contact <span></span> <span></span> at <span></span>.</p>");
+                    $("#final-result").empty().append("<p>Thank you for your message. I am on vacation until <span></span>. I will respond to your message upon my return. <span>If you need immediate assistance please contact <span></span> <span></span> at <span></span>.</span></p>");
                     break;
                 }
                 case "sick-leave": {
-                    $("#final-result").empty().append("<p>Thank you for your message. I am on a sick leave until <span></span>. I will respond to your message upon my return. If you need immediate assistance please contact <span></span> <span></span> at <span></span>.</p>");
+                    $("#final-result").empty().append("<p>Thank you for your message. I am on a sick leave until <span></span>. I will respond to your message upon my return. <span>If you need immediate assistance please contact <span></span> <span></span> at <span></span>.</span></p>");
                     break;
                 }
                 case "maternity-leave": {
-                    $("#final-result").empty().append("<p>Thank you for your message. I am on a maternity leave until <span></span>. During my absence please contact <span></span> <span></span> at <span></span>.</p>");
+                    $("#final-result").empty().append("<p>Thank you for your message. I am on a maternity leave until <span></span>. <span>During my absence please contact <span></span> <span></span> at <span></span>.</span></p>");
                     break;
                 }
                 case "christmas": {
-                    $("#final-result").empty().append("<p>Season's greetings!<br>Thank you for your message. I am on Christmas break until <span></span>. If your case is urgent please contact <span></span> <span></span> at <span></span>.</p>");
+                    $("#final-result").empty().append("<p>Season's greetings!<br>Thank you for your message. I am on Christmas break until <span></span>. <span>If your case is urgent please contact <span></span> <span></span> at <span></span>.</span></p>");
                     break;
                 }
             }
@@ -52,6 +51,20 @@ var Application = function(){
                 var spanTarget = $("div#final-result span:first-of-type");
                 spanTarget.empty().append(" " + returnDate);
         });
+
+            //adding substitute
+            $("#emergency-contact-option").change(function(){
+                if ($( this ).val() == "no") {
+                    $("#emergency-contact-data").hide();
+                    $("div#final-result span:nth-of-type(2)").remove();
+                }
+
+                else {
+                    $("#emergency-contact-data").show();
+                }
+            });
+
+
             //
             //$(".final-message").removeClass("no-display");
 
