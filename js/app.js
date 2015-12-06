@@ -46,8 +46,11 @@ var Application = function(){
                 }
             }
 
-        $("#datepicker").change(function(){
-            console.log("date-changed");
+            //choosing return date
+            $("#datepicker").change(function(){
+                var returnDate = $(this).val();
+                var spanTarget = $("div#final-result span:first-of-type");
+                spanTarget.empty().append(" " + returnDate);
         });
             //
             //$(".final-message").removeClass("no-display");
