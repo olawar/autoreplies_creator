@@ -12,6 +12,7 @@ var Application = function(){
 
         //choosing the reason
         $("#message-style-options").change(function(){
+            $("div.final-message").addClass("no-display");
             var optionSelected = $( this ).val();
 
             switch(optionSelected) {
@@ -47,6 +48,7 @@ var Application = function(){
 
             //choosing return date
             $("#datepicker").change(function(){
+                $("div.final-message").addClass("no-display");
                 var returnDate = $(this).val();
                 var spanTarget = $("div#final-result p > span:first-child");
                 spanTarget.empty().append(" " + returnDate);
@@ -54,6 +56,7 @@ var Application = function(){
 
             //adding substitute
             $("#emergency-contact-option").change(function(){
+                $("div.final-message").addClass("no-display");
                 if ($( this ).val() == "no") {
                     $("#emergency-contact-data").hide();
                     $("div#final-result p > span:nth-child(2)").addClass("no-display");
@@ -66,32 +69,31 @@ var Application = function(){
             });
 
             $("input[name=name]").change(function(){
+                $("div.final-message").addClass("no-display");
                 var subName = $(this).val();
                 var spanTargetName = $("div#final-result p > span > span:first-child");
                 spanTargetName.empty().append(" " + subName + " ");
             });
 
             $("input[name=surname]").change(function(){
+                $("div.final-message").addClass("no-display");
                 var subSurname = $(this).val();
                 var spanTargetSurname = $("div#final-result p > span > span:nth-child(2)");
                 spanTargetSurname.empty().append(" " + subSurname + " ");
             });
 
             $("input[name=email]").change(function(){
+                $("div.final-message").addClass("no-display");
                 var subEmail = $(this).val();
                 var spanTargetEmail = $("div#final-result p > span > span:last-child");
                 spanTargetEmail.empty().append(" " + subEmail);
             });
 
-
-            //
-            //$(".final-message").removeClass("no-display");
-
         });
 
-    }
-
-    function generateAutoreply(){
+    //}
+    //
+    //function generateAutoreply(){
 
         $("#submit-button").on("click", function(){
             $("div.final-message").removeClass("no-display");
