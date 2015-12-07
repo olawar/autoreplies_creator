@@ -5,7 +5,7 @@ var Application = function(){
     }
 
     function datepickerFeature(){
-        $( "#datepicker" ).datepicker();
+        $('#datepicker').datepicker({ dateFormat: 'MM d, yy' }).val();
     }
 
     function messageTemplate(){
