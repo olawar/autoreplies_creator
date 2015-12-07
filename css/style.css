@@ -80,7 +80,7 @@ html {
     text-align: center;
     padding: 5.25rem 0;
     box-sizing: border-box;
-    margin: 2.5rem auto; }
+    margin: 2rem auto; }
     @media screen and (max-width: 1024px) and (orientation: portrait) {
       .title-space .content-container h1 {
         font-family: 'Source Code Pro', sans-serif;

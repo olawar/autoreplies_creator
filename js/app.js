@@ -89,6 +89,11 @@ var Application = function(){
 
         $("#submit-button").on("click", function(){
             $("div#final-result p > span:first-child").empty().append($("#datepicker").val());
+
+            if ($("#emergency-contact-data").val() == "no") {
+                 $("div#final-result p > span:nth-child(2)").addClass("no-display");
+            }
+
             $("div#final-result p > span > span:first-child").empty().append($("input[name=name]").val());
             $("div#final-result p > span > span:nth-child(2)").empty().append( $("input[name=surname]").val());
             $("div#final-result p > span > span:last-child").empty().append( $("input[name=email]").val());
