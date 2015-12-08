@@ -88,28 +88,33 @@ var Application = function(){
     //this function activates on clicking the 'submit' button and adds all the details to the previously created message template
 
         $("#submit-button").on("click", function(){
-            if (($("#emergency-contact-data").val() != "no") && ($("input[name=name]").val() == "")){
+            var isSubstitute = $("#emergency-contact-data");
+            var substituteName = $("input[name=name]");
+            var substituteSurname = $("input[name=surname]");
+            var substituteEmail = $("input[name=email]");
+
+            if (isSubstitute.val() != "no" && substituteName.val() == ""){
                 alert("Please enter your substitute's name");
             }
 
-            else if ($("#emergency-contact-data").val()!= "no" && $("input[name=surname]").val() == ""){
+            else if (isSubstitute.val()!= "no" && substituteSurname.val() == ""){
                 alert("Please enter your substitute's surname");
             }
 
-            else if ($("#emergency-contact-data").val() != "no" && $("input[name=email]").val() == ""){
+            else if (isSubstitute.val() != "no" && substituteEmail.val() == ""){
                 alert("Please enter your substitute's email");
             }
 
             else {
                 $("div#final-result p > span:first-child").empty().append($("#datepicker").val());
 
-                if ($("#emergency-contact-data").val() == "no") {
+                if (isSubstitute.val() == "no") {
                     $("div#final-result p > span:nth-child(2)").addClass("no-display");
                 }
 
-                $("div#final-result p > span > span:first-child").empty().append($("input[name=name]").val());
-                $("div#final-result p > span > span:nth-child(2)").empty().append( $("input[name=surname]").val());
-                $("div#final-result p > span > span:last-child").empty().append( $("input[name=email]").val());
+                $("div#final-result p > span > span:first-child").empty().append(substituteName.val());
+                $("div#final-result p > span > span:nth-child(2)").empty().append(substituteSurname.val());
+                $("div#final-result p > span > span:last-child").empty().append(substituteEmail.val());
                 $("div.final-message").removeClass("no-display");
             }
 
