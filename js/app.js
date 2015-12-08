@@ -106,15 +106,15 @@ var Application = function(){
             }
 
             else {
-                $("div#final-result p > span:first-child").empty().append($("#datepicker").val());
+                $("div#final-result p > span:first-child").empty().append($("#datepicker").val().replace(/</, "&lt;").replace(/>/, "&gt;"));
 
                 if (isSubstitute.val() == "no") {
                     $("div#final-result p > span:nth-child(2)").addClass("no-display");
                 }
 
-                $("div#final-result p > span > span:first-child").empty().append(substituteName.val());
-                $("div#final-result p > span > span:nth-child(2)").empty().append(substituteSurname.val());
-                $("div#final-result p > span > span:last-child").empty().append(substituteEmail.val());
+                $("div#final-result p > span > span:first-child").empty().append(substituteName.val().replace(/</, "&lt;").replace(/>/, "&gt;"));
+                $("div#final-result p > span > span:nth-child(2)").empty().append(substituteSurname.val().replace(/</, "&lt;").replace(/>/, "&gt;"));
+                $("div#final-result p > span > span:last-child").empty().append(substituteEmail.val().replace(/</, "&lt;").replace(/>/, "&gt;"));
                 $("div.final-message").removeClass("no-display");
             }
 
