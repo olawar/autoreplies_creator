@@ -88,20 +88,20 @@ var Application = function(){
     //this function activates on clicking the 'submit' button and adds all the details to the previously created message template
 
         $("#submit-button").on("click", function(){
-            var isSubstitute = $("#emergency-contact-data");
+            var isSubstitute = $("#emergency-contact-option");
             var substituteName = $("input[name=name]");
             var substituteSurname = $("input[name=surname]");
             var substituteEmail = $("input[name=email]");
 
-            if (isSubstitute.val() != "no" && substituteName.val() == ""){
+            if (isSubstitute.val() == "yes" && substituteName.val() == ""){
                 alert("Please enter your substitute's name");
             }
 
-            else if (isSubstitute.val()!= "no" && substituteSurname.val() == ""){
+            else if (isSubstitute.val() == "yes" && substituteSurname.val() == ""){
                 alert("Please enter your substitute's surname");
             }
 
-            else if (isSubstitute.val() != "no" && substituteEmail.val() == ""){
+            else if (isSubstitute.val() == "yes" && substituteEmail.val() == ""){
                 alert("Please enter your substitute's email");
             }
 
