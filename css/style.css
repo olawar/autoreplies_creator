@@ -166,7 +166,13 @@ html {
     box-sizing: border-box;
     padding: 0 1rem;
     font-family: 'Source Code Pro', sans-serif;
-    color: gray; }
+    color: gray;
+    background-color: #ffffff; }
+    #message-generator select:focus,
+    #message-generator input[type=email]:focus,
+    #message-generator input[type=date]:focus,
+    #message-generator #datepicker:focus {
+      background-color: #f2ecc2; }
     @media screen and (max-width: 1024px) and (orientation: portrait) {
       #message-generator select,
       #message-generator input[type=email],
@@ -187,7 +193,10 @@ html {
     box-sizing: border-box;
     padding: 0 1rem;
     font-family: 'Source Code Pro', sans-serif;
-    color: gray; }
+    color: gray;
+    background-color: #ffffff; }
+    #message-generator input[type=text]:focus {
+      background-color: #f2ecc2; }
     @media screen and (max-width: 1024px) and (orientation: portrait) {
       #message-generator input[type=text] {
         width: 100%; } }
@@ -205,6 +214,8 @@ html {
     text-transform: uppercase;
     font-size: 1.2rem;
     margin: 1rem 0 3rem 0; }
+    #message-generator input[type=submit]:hover {
+      background-color: #8d002b; }
   @media screen and (max-width: 1024px) and (orientation: portrait) {
     #message-generator {
       float: none;

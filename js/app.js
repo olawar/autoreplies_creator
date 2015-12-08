@@ -37,8 +37,8 @@ var Application = function(){
                     $("#final-result").empty().append("<p>Thank you for your message. I am on a sick leave until <span></span>. I will respond to your message upon my return. <span>If you need immediate assistance please contact <span></span> <span></span> at <span></span>.</span></p>");
                     break;
                 }
-                case "maternity-leave": {
-                    $("#final-result").empty().append("<p>Thank you for your message. I am on a maternity leave until <span></span>. <span>During my absence please contact <span></span> <span></span> at <span></span>.</span></p>");
+                case "parental-leave": {
+                    $("#final-result").empty().append("<p>Thank you for your message. I am on parental leave until <span></span>. <span>During my absence please contact <span></span> <span></span> at <span></span>.</span></p>");
                     break;
                 }
                 case "christmas": {
@@ -88,16 +88,31 @@ var Application = function(){
     //this function activates on clicking the 'submit' button and adds all the details to the previously created message template
 
         $("#submit-button").on("click", function(){
-            $("div#final-result p > span:first-child").empty().append($("#datepicker").val());
-
-            if ($("#emergency-contact-data").val() == "no") {
-                 $("div#final-result p > span:nth-child(2)").addClass("no-display");
+            if (($("#emergency-contact-data").val() != "no") && ($("input[name=name]").val() == "")){
+                alert("Please enter your substitute's name");
             }
 
-            $("div#final-result p > span > span:first-child").empty().append($("input[name=name]").val());
-            $("div#final-result p > span > span:nth-child(2)").empty().append( $("input[name=surname]").val());
-            $("div#final-result p > span > span:last-child").empty().append( $("input[name=email]").val());
-            $("div.final-message").removeClass("no-display");
+            else if ($("#emergency-contact-data").val()!= "no" && $("input[name=surname]").val() == ""){
+                alert("Please enter your substitute's surname");
+            }
+
+            else if ($("#emergency-contact-data").val() != "no" && $("input[name=email]").val() == ""){
+                alert("Please enter your substitute's email");
+            }
+
+            else {
+                $("div#final-result p > span:first-child").empty().append($("#datepicker").val());
+
+                if ($("#emergency-contact-data").val() == "no") {
+                    $("div#final-result p > span:nth-child(2)").addClass("no-display");
+                }
+
+                $("div#final-result p > span > span:first-child").empty().append($("input[name=name]").val());
+                $("div#final-result p > span > span:nth-child(2)").empty().append( $("input[name=surname]").val());
+                $("div#final-result p > span > span:last-child").empty().append( $("input[name=email]").val());
+                $("div.final-message").removeClass("no-display");
+            }
+
             return false;
         });
     }
