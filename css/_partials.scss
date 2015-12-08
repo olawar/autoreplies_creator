@@ -62,7 +62,7 @@ html {
     }
   }
   @include smartphone {
-    height: auto;
+    height: 100%;
   }
   @include tablet {
     height: auto;
@@ -120,6 +120,7 @@ html {
 #form-space {
   background-color: #67A0E1;
   color: #ffffff;
+  width: 100%;
   h2 {
     font-size: 2rem;
     margin: 1.5rem 0 3rem 0;
@@ -176,9 +177,11 @@ html {
     }
     @include smartphone {
       width: 100%;
+      margin: 0.5rem 0 0 0;
     }
     @include tablet {
       width: 100%;
+      margin: 0.5rem 0 0 0;
     }
   }
   input[type=submit] {
@@ -192,7 +195,8 @@ html {
     text-transform: uppercase;
     font-size: 1.2rem;
     margin: 1rem 0 3rem 0;
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: #8d002b;
     }
   }

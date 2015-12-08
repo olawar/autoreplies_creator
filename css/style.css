@@ -96,7 +96,7 @@ html {
         margin: 2.5rem auto; } }
   @media screen and (max-width: 1024px) and (orientation: portrait) {
     .title-space {
-      height: auto; } }
+      height: 100%; } }
   @media screen and (max-width: 1024px) and (orientation: landscape) {
     .title-space {
       height: auto; } }
@@ -140,7 +140,8 @@ html {
 
 #form-space {
   background-color: #67A0E1;
-  color: #ffffff; }
+  color: #ffffff;
+  width: 100%; }
   #form-space h2 {
     font-size: 2rem;
     margin: 1.5rem 0 3rem 0;
@@ -199,10 +200,12 @@ html {
       background-color: #f2ecc2; }
     @media screen and (max-width: 1024px) and (orientation: portrait) {
       #message-generator input[type=text] {
-        width: 100%; } }
+        width: 100%;
+        margin: 0.5rem 0 0 0; } }
     @media screen and (max-width: 1024px) and (orientation: landscape) {
       #message-generator input[type=text] {
-        width: 100%; } }
+        width: 100%;
+        margin: 0.5rem 0 0 0; } }
   #message-generator input[type=submit] {
     width: 10rem;
     height: 3rem;
@@ -214,7 +217,7 @@ html {
     text-transform: uppercase;
     font-size: 1.2rem;
     margin: 1rem 0 3rem 0; }
-    #message-generator input[type=submit]:hover {
+    #message-generator input[type=submit]:hover, #message-generator input[type=submit]:focus {
       background-color: #8d002b; }
   @media screen and (max-width: 1024px) and (orientation: portrait) {
     #message-generator {
