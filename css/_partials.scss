@@ -32,7 +32,8 @@ html {
 
 .title-space {
   background-color: #67a0e1;
-  height: 55%;
+  height: auto;
+  min-height: 55%;
   .content-container {
     h1 {
       font-family: 'Source Code Pro', sans-serif;
@@ -45,7 +46,7 @@ html {
       text-align: center;
       padding: 5.25rem 0;
       box-sizing: border-box;
-      margin: 2rem auto;
+      margin: 1.75rem auto;
       @include smartphone {
         font-family: 'Source Code Pro', sans-serif;
         font-size: 2.15rem;
@@ -73,7 +74,8 @@ html {
 
 .intro-space {
   background-color: #ffffff;
-  height: 45%;
+  height: auto;
+  min-height: 45%;
   .content-container {
     text-align: center;
     color: #446994;
