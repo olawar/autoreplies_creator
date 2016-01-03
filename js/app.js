@@ -52,6 +52,12 @@ var Application = function(){
     function manageBehaviour(){
     //this function manages behaviour on change and keypress events to prevent visible dynamic changes in the final output
 
+        //general message
+
+        $("#message-style-options").change(function(){
+            $("div.final-message").addClass("no-display");
+        });
+
         //return date
         $("#datepicker").change(function(){
             $("div.final-message").addClass("no-display");
@@ -88,12 +94,17 @@ var Application = function(){
     //this function activates on clicking the 'submit' button and adds all the details to the previously created message template
 
         $("#submit-button").on("click", function(){
+            var optionSelected = $("#message-style-options");
             var isSubstitute = $("#emergency-contact-option");
             var substituteName = $("input[name=name]");
             var substituteSurname = $("input[name=surname]");
             var substituteEmail = $("input[name=email]");
 
-            if (isSubstitute.val() == "yes" && substituteName.val() == ""){
+            if (optionSelected.val() == "choose"){
+                alert("Please choose your reason");
+            }
+
+            else if (isSubstitute.val() == "yes" && substituteName.val() == ""){
                 alert("Please enter your substitute's name");
             }
 
